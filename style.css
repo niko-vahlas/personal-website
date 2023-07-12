@@ -6,75 +6,129 @@
   box-sizing: border-box;
 }
 
-ul {
-    list-style-type: none;
-}
+html {
+    scroll-behavior: smooth;
+  }
 
-html,body {
-    line-height: 1.7em;
-}
+  h1, h2, h3, h4, h5, h6, span {
+    color: #242424;
+    text-align: center;
+    line-height: 1.25;
+  }
+  
+  h1 {
+    font-size: 36px;
+  }
+  
+  p {
+    line-height: 1.5;
+    font-size: 16px;
+  }
 
-a {
-    color: #333;
+  ul {
+    list-style:none;
+}
+  
+  a {
     text-decoration: none;
-}
+    position: relative;
+    transition: opacity 300ms ease;
+  }
 
-h1, h2, h3 {
-    padding-bottom: 20px;
-}
+  .section--title {
+    text-align: center;
+    padding-bottom: 24px;
+    font-size: 24px;
+  }
 
-p {
-    margin: 10px 0;
-}
+  .color-text {
+    color: #6C63FF;
+  }
 
 /*Utility*/
 .container {
-    margin: auto;
-    overflow: auto;
-    max-width: 1100px;
-    padding: 0 20px;
-}
+    padding: 50px 0;
+  }
+  .row {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 12px;
+  }
 
-.text-highlight {
-    color: blue;
-}
+  section:nth-child(even) {
+    background-color: #f8f8f8;
+  }
 
 /* Navbar */
+
 #navbar {
-    overflow: auto;
-    background-color: #333;
-    color: #fff;
+    height: 100px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 12px;
 }
 
-#navbar h3 {
-    float: left;
-    padding: 20px;
+.navbar--container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#navbar ul {
-    float: right;
+.navbar--list {
+    display: flex;
 }
 
-#navbar ul li {
-    float: left;
-    
+.personal--logo {
+    font-size: 24px;
+    color: #6C63FF;
+    margin: 0 12px;
+    font-weight: bold
 }
 
-#navbar ul li a {
-    display: block;
-    text-align: center;
-    padding: 20px 10px;
-    color: #fff;
+.nav--link__anchor {
+    margin: 0 12px;
+    color: #242424;
+    font-weight: 700;
 }
 
-#navbar ul li a:hover {
-    background: purple;
-    color: aquamarine;
+.navbar--list li{
+    padding: 3px;
+}
+
+/* Navbar animation */
+
+.navbar--list li {
+    display: inline-block;
+    position: relative;
+    color: #6C63FF;
+  }
+  
+.navbar--list li:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #6C63FF;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+  
+.navbar--list li:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 
 .img-container {
-    padding-top: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     width: 100px; 
     margin: auto; 
 }
@@ -86,21 +140,14 @@ p {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
 }
 
-
-header h1{
-    text-align: center;
-    font-size: 40px;
-    padding-top: 30px;
-    
-}
-
-.header-text-wrapper {
-    width: 500px;
+.about-me--text-wrapper {
     margin: auto;
-}
-.header-text-wrapper p {
+    padding-top: 10px;
+    padding-bottom: 16px;
+    max-width: 500px;
     text-align: center;
 }
+
 
 .about-me-links {
     width: 300px;
@@ -111,4 +158,93 @@ header h1{
 .about-me-link {
     font-size: 20px; 
     padding: 16px;
+    color: #6C63FF;;
 }
+
+.about-me--undraw {
+    display: block;
+    padding-top: 60px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+/*Languages*/
+
+.language--list {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+
+}
+
+.language {
+    width: 33%;
+    max-width: 200px;
+    position: relative;
+    text-align: center;
+}
+
+.language--img {
+    width: 100%;
+    transition: opacity 0.5s ease;
+}
+
+.language--wrapper {
+    width: 100%;
+    padding: 15px 15px;
+}
+
+.language_name {
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.language:hover .language--img {
+    opacity: 0.5; 
+}
+
+.language:hover .language_name {
+    opacity: 1; 
+}
+
+
+/* Projects */
+
+.project {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project--name {
+    font-size: 18px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    
+}
+
+.project--pic__wrap {
+   max-width: 300px;
+   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+    border-radius: 8px;
+   
+}
+
+.project--pic {
+    width: 100%;
+}
+
+.project--para {
+padding-top: 20px;
+}
+
+
+footer {
+    background-color:#242424;
+    height: 300px;
+}
+
