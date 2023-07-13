@@ -158,14 +158,18 @@ html {
 .about-me-link {
     font-size: 20px; 
     padding: 16px;
-    color: #6C63FF;;
+    color: #6C63FF;
+}
+
+.about-me__wrapper {
+    max-width: 600px;
+    margin-left: auto;
+   margin-right: auto;
 }
 
 .about-me--undraw {
-    display: block;
-    padding-top: 60px;
-   margin-left: auto;
-   margin-right: auto;
+padding-top: 60px;
+   width: 100%;
 }
 
 /*Languages*/
@@ -242,9 +246,63 @@ html {
 padding-top: 20px;
 }
 
-
 footer {
-    background-color:#242424;
-    height: 300px;
+    background-color: #242424;
+    height: 275px;
+    padding: 20px 0;
+    text-align: center;
 }
 
+.footer--logo__wrapper {
+    max-width: 100px;
+    margin: auto;
+}
+
+.footer--image {
+    width: 100%;
+}
+
+
+.footer--links__wrapper {
+    text-align: center;
+    width: 50px;
+}
+
+.footer--links {
+    display: flex;
+   justify-content: center;
+}
+
+.footer--links li {
+    padding: 20px;
+}
+
+.footer--link__anchor {
+    color: #fff;
+    transition: color 300ms ease;
+    position: relative;
+}
+
+.footer--link__anchor:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    bottom: -5px;
+    left: 0;
+    transition: width 300ms ease;
+}
+
+.footer--link__anchor:hover:after {
+    width: 100%;
+}
+
+@media (max-width: 468px) {
+    .navbar--list li:not(:nth-child(4)) {
+        display: none;
+    }
+    .nav--link__anchor {
+        color: #6C63FF;
+    }
+  }
